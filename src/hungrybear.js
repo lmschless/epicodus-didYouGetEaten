@@ -5,6 +5,7 @@ export class HungryBear {
 		this.name = name;
 		this.foodLevel = 100;
 		this.sleepLevel = 100;
+		this.difficultyLevel;
 	}
 
 	setHunger() {
