@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Did You Get Eaten?</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Did you get Eaten?</h1>
+      <div>
+        <div">
+          <hr>
+          <form id="order">
+            <h2>Feed the beer to prevent being eaten!</h2>
+            <div class="form-group sizing">
+              <label for="name">Bear's Name</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group sizing">
+              <label for="exampleFormControlSelect1">Difficulty Level</label>
+              <select class="form-control" id="pizza-size">
+                <option>Easy</option>
+                <option>Normal</option>
+                <option>Hard</option>
+              </select>
+            </div>
+            <div class="form-group" id="toppings">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox"
+                  id="inlineCheckbox1" value="pepperoni">
+                <label class="form-check-label" for="inlineCheckbox1">Hardcore
+                  Mode</label>
+              </div>
+
+
+              <button type="submit" class="btn-primary">Play game!</button>
+              <div id="balance">
+                <br>
+                <h2>
+                  <label for="current-total">Current Total</label>
+                  <input type="text" id="current-total">
+                </h2>
+                <br>
+                <h3>Transaction History:</h3>
+                <br>
+                <div id="history"></div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <hr>
+      </div>
+    </body>
+  </html>
