@@ -1,5 +1,8 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './gameUI.js';
+import $ from 'jquery';
+
 export class HungryBear {
 	constructor(name) {
 		this.name = name;
@@ -11,6 +14,8 @@ export class HungryBear {
 	setHunger() {
 		setInterval(() => {
 			this.foodLevel--;
+			currentHunger = (this.foodLevel);
+			console.log(this.foodLevel);
 		}, 1000);
 	}
 
@@ -18,5 +23,9 @@ export class HungryBear {
 		setInterval(() => {
 			this.sleepLevel--;
 		}, 5000);
+	}
+
+	playGame(){
+		this.setHunger();
 	}
 }
