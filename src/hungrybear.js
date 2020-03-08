@@ -4,17 +4,18 @@ import './gameUI.js';
 import $ from 'jquery';
 
 export class HungryBear {
-	constructor(name) {
+	constructor(name, currentHunger) {
 		this.name = name;
 		this.foodLevel = 100;
 		this.sleepLevel = 100;
 		this.difficultyLevel;
+		this.currentHunger = currentHunger;
 	}
 
 	setHunger() {
 		setInterval(() => {
 			this.foodLevel--;
-			currentHunger = (this.foodLevel);
+			this.currentHunger = this.foodLevel;
 			console.log(this.foodLevel);
 		}, 1000);
 	}
