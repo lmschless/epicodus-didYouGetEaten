@@ -5,7 +5,7 @@ let newBear;
 
 	$('#game-setup').submit(function(e) {
 		// const currentHunger = $('#current-hunger').val();
-		newBear = new HungryBear($('#name').val(), 'normal');
+		newBear = new HungryBear($('#name').val(), $("#difficulty-level").val().toLowerCase());
 		newBear.playGame();
 		console.log(newBear);
 		e.preventDefault();
