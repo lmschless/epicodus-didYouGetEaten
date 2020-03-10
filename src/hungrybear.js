@@ -42,7 +42,10 @@ export class HungryBear {
 			this.foodLevel--;
 		}, 400);
 	} else {
-			setInterval(() => {
+				let hardInterval = setInterval(() => {
+				if(this.foodLevel == 0){
+					clearInterval(hardInterval);
+				}
 			$('#current-hunger').val(this.foodLevel);
 			this.currentHunger = this.foodLevel;
 			this.foodLevel--;
@@ -51,7 +54,11 @@ export class HungryBear {
 	}
 
 	feed() {
-		this.foodLevel += 10;
+		if(this.hardcore){
+			this.foodLevel +=4;
+		} else{
+			this.foodLevel += 10;
+		}
 	}
 
 	setSleep() {
