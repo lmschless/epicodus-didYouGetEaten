@@ -13,6 +13,7 @@ $(document).ready(function() {
 		newBear.playGame();
 		console.log(newBear);
 		e.preventDefault();
+		$('#game-setup')[0].reset();
 	});
 
 	$('#feed').click(function(e) {
