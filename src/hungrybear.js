@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './gameUI.js';
 import $ from 'jquery';
-
+import axios from 'axios';
 export class HungryBear {
 	constructor(name, difficultyLevel, hardcore = 'no') {
 		this.name = name;
@@ -72,3 +72,20 @@ export class HungryBear {
 		this.setHunger();
 	}
 }
+
+const giphyApi = () => {
+	const response = axios.get('http://api.giphy.com/v1/gifs', {
+		params: {
+			apikey: '3GEN0IiVzJVKldUDffJCxrkGBFK02tGL',
+			gif_id: 'xT4uQulxzV39haRFjG'
+		}
+	});
+
+	if (response.data.Error) {
+		return [];
+	}
+
+	return response.data.Search;
+};
+
+giphyApi();
