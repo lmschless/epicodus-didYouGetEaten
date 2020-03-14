@@ -74,6 +74,7 @@ export class HungryBear {
 	}
 
 	gameOver() {
+		$('body').append(`${this.name} has eaten you! Better luck next time.`);
 		console.log('you lose!');
 		giphyApi();
 	}
