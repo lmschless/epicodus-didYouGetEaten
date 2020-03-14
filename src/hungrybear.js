@@ -73,19 +73,14 @@ export class HungryBear {
 	}
 }
 
-const giphyApi = () => {
-	const response = axios.get('http://api.giphy.com/v1/gifs', {
+export const giphyApi = () => {
+	const response = axios.get('http://api.giphy.com/v1/gifs/search', {
 		params: {
-			apikey: '3GEN0IiVzJVKldUDffJCxrkGBFK02tGL',
-			gif_id: 'xT4uQulxzV39haRFjG'
+			apikey: '3GEN0IiVzJVKldUDffJCxrkGBFK02tGL'
+			// q: 'angry bear'
+			// url: 'https://giphy.com/gifs/black-and-white-bear-gif-v1hwKUzuDbURO'
 		}
 	});
 
-	if (response.data.Error) {
-		return [];
-	}
-
-	return response.data.Search;
+	$('#history').append(response);
 };
-
-giphyApi();
