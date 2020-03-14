@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import { HungryBear } from './hungrybear.js';
-import { giphyApi } from './hungrybear.js';
 $(document).ready(function() {
 	let newBear;
 	$('#game-setup').submit(function(e) {
@@ -14,11 +13,9 @@ $(document).ready(function() {
 		console.log(newBear);
 		e.preventDefault();
 		$('#game-setup')[0].reset();
+		$('.hide').hide();
 	});
-
 	$('#feed').click(function(e) {
-		// giphyApi();
-
 		e.preventDefault();
 		newBear.feed();
 	});

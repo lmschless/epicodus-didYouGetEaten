@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './gameUI.js';
 import $ from 'jquery';
-import axios from 'axios';
+
 export class HungryBear {
 	constructor(name, difficultyLevel, hardcore = 'no') {
 		this.name = name;
