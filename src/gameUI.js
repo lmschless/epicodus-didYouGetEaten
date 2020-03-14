@@ -17,7 +17,7 @@ $(document).ready(function() {
 	});
 
 	$('#feed').click(function(e) {
-		giphyApi();
+		// giphyApi();
 
 		e.preventDefault();
 		newBear.feed();
