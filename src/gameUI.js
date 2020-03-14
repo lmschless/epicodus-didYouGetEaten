@@ -5,7 +5,6 @@ $(document).ready(function() {
 	let newBear;
 	$('#game-setup').submit(function(e) {
 		// const currentHunger = $('#current-hunger').val();
-		giphyApi();
 		newBear = new HungryBear(
 			$('#name').val(),
 			$('#difficulty-level').val().toLowerCase(),
@@ -18,6 +17,8 @@ $(document).ready(function() {
 	});
 
 	$('#feed').click(function(e) {
+		giphyApi();
+
 		e.preventDefault();
 		newBear.feed();
 	});

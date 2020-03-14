@@ -74,13 +74,35 @@ export class HungryBear {
 }
 
 export const giphyApi = () => {
-	const response = axios.get('http://api.giphy.com/v1/gifs/search', {
-		params: {
-			apikey: '3GEN0IiVzJVKldUDffJCxrkGBFK02tGL'
-			// q: 'angry bear'
-			// url: 'https://giphy.com/gifs/black-and-white-bear-gif-v1hwKUzuDbURO'
-		}
-	});
+	const response = fetch(
+		`https://api.giphy.com/v1/gifs/search?api_key=3GEN0IiVzJVKldUDffJCxrkGBFK02tGL&q=angry bear&limit=25&offset=0&rating=G&lang=en`
+	)
+		.then(function(response) {
+			if (response.ok && response.status == 200) {
+				return response.json();
+			} else {
+				return false;
+			}
+		})
+		.then(function(jsonifiedResponse) {
+			console.log(jsonifiedResponse.data[0]);
+			$('body').append(
+				// giphy's link to gif
+				`<iframe src="https://giphy.com/embed/xT5LMqN2WLN13JR8CA" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/season-15-the-simpsons-15x5-xT5LMqN2WLN13JR8CA">via GIPHY</a></p>>`
+			);
+			$('body').append(
+				// my api call to giphy, seems like I have to use an iframe for it to work.
+				`<div id="history"><p><iframe src="${jsonifiedResponse.data[0]
+					.embed_url}" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p></div>`
+			);
+		});
 
-	$('#history').append(response);
+	// const response = axios.get('http://api.giphy.com/v1/gifs/search', {
+	// 	params: {
+	// 		apikey: '3GEN0IiVzJVKldUDffJCxrkGBFK02tGL'
+	// 		// q: 'angry bear'
+	// 		// url: 'https://giphy.com/gifs/black-and-white-bear-gif-v1hwKUzuDbURO'
+	// 	}
+
+	console.log(response);
 };
