@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	entry: './src/hungrybear.js', // './src/index': './src/main.js'
@@ -15,6 +16,7 @@ module.exports = {
 		contentBase: './dist'
 	},
 	plugins: [
+		new Dotenv(),
 		new UglifyJsPlugin({ sourceMap: true }),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({

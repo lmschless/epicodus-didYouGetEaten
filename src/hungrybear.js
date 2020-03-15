@@ -82,8 +82,12 @@ export class HungryBear {
 
 export const giphyApi = () => {
 	const response = fetch(
-		`https://api.giphy.com/v1/gifs/search?api_key=3GEN0IiVzJVKldUDffJCxrkGBFK02tGL&q=angry bear&limit=25&offset=0&rating=G&lang=en`
+		`https://api.giphy.com/v1/gifs/search?api_key=${process.env
+			.API_KEY}&q=angry bear&limit=25&offset=0&rating=G&lang=en`
 	)
+		// const response = fetch(
+		// 	`https://api.giphy.com/v1/gifs/search?api_key=3GEN0IiVzJVKldUDffJCxrkGBFK02tGL&q=angry bear&limit=25&offset=0&rating=G&lang=en`
+		// )
 		.then(function(response) {
 			if (response.ok && response.status == 200) {
 				return response.json();
